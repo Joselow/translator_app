@@ -1,0 +1,13 @@
+
+-- usReducer
+// No devolver el dispatch a tus componentes, para tener mayor control cuando queramos usar otro paquete y ya no el dispacth,
+por ello e smejor ponerlo dentor de un hook y ya
+
+
+** Advices
+- meintrasmas logica de engocio en un componene mas cerrado, caso contrario que sea mas extendible desde fuera.
+, crrado o extensible se refiere a no poder contorlar los comporatmientos etc del componente con props etc.
+
+
+-- TS
+// keyof -- se queda con las keys de un objeto o de el tipo del objeto. typeof
