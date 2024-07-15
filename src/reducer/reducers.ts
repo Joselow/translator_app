@@ -1,19 +1,24 @@
-import { InitialState } from "../types/initialState";
+import { AUTO_LANGUAGE } from "../enums";
+import { FromLanguages, InitialState, Languages } from "../types/initialState";
 
-export const interchangeLanguages = (state: InitialState): InitialState => ({
-  ...state,
-  fromLanguage: state.toLanguage,
-  toLanguage: state.fromLanguage,
-  fromText: state.resultText,
-  resultText: state.fromText,
-});
+export const interchangeLanguages = (state: InitialState): InitialState => {
+  if (state.fromLanguage === AUTO_LANGUAGE) return state
 
-export const setFromLanguage = (state: InitialState, payload: string = ''): InitialState => ({
+  return {
+    ...state,
+    fromLanguage: state.toLanguage,
+    toLanguage: state.fromLanguage,
+    fromText: state.resultText,
+    resultText: state.fromText,
+  }
+};
+
+export const setFromLanguage = (state: InitialState, payload: FromLanguages): InitialState => ({
   ...state,
   fromLanguage: payload,
 });
 
-export const setToLanguage = (state: InitialState, payload: string = ''): InitialState => ({
+export const setToLanguage = (state: InitialState, payload: Languages): InitialState => ({
   ...state,
   loading: true,
   toLanguage: payload,

@@ -11,3 +11,8 @@ por ello e smejor ponerlo dentor de un hook y ya
 
 -- TS
 // keyof -- se queda con las keys de un objeto o de el tipo del objeto. typeof
+
+-- TS en react 
+// para las props se puede tipara de dos formas una la convencional de {params} : Type, la otra usando
+un tipo de React (FC -- FunctionalComponent) que brinda beneficios pero con al primera forma generalmente esta mas que bien.
+// tipado de eventos es asi -- const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {}
