@@ -8,6 +8,7 @@ export interface InitialState {
   fromText: string;
   resultText: string;
   loading: boolean;
+  lastExchangeValue: Languages | null;
 }
 
 export type Action =

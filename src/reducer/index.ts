@@ -17,7 +17,8 @@ export const initialState: InitialState = {
   toLanguage: 'en',
   fromText: '',
   resultText: '',
-  loading: false
+  loading: false,
+  lastExchangeValue:  null
 }
 
 export const reducer = (state: InitialState, action: Action): InitialState => {

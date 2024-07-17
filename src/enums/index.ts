@@ -1,6 +1,6 @@
-export enum SUPPORTED_LANGUAGES {
-  en = 'English',
-  es = 'Español'
+export const SUPPORTED_LANGUAGES = {
+  en: 'English',
+  es: 'Español'
 }
 
 
