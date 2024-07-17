@@ -1,8 +1,9 @@
-import { SelectorLanguages } from "./componentes/icons/SelectorLanguage";
+import { SelectorLanguages } from "./componentes/SelectorLanguage";
+import { Textlanguage } from "./componentes/TextLanguage";
 import InterchangeIcon from "./componentes/icons/InterchangeIcon";
 
 import { useTranslator } from "./hooks/useTranslator";
-import { AUTO_LANGUAGE } from "./enums";
+import { AUTO_LANGUAGE, LANG_DIRECTION } from "./enums";
 
 function App() {
   const {
@@ -10,7 +11,10 @@ function App() {
     toLanguage,
     setFromLanguage,
     interchangeLanguages,
-    setToLanguage
+    setToLanguage,
+    loading,
+    setFromText,
+    setResultText
   } = useTranslator();
   return (
     <>
@@ -18,12 +22,16 @@ function App() {
         <div className="grid grid-cols-3 gap-10">
           <div >
             <SelectorLanguages
-              type="from"
+              type={LANG_DIRECTION.FROM}
               value={fromLanguage}
               onChange={setFromLanguage}
             />
             <div>
-              {fromLanguage}
+              <Textlanguage
+                type={LANG_DIRECTION.FROM}
+                placeholder="Empieza a escribir"
+                onChange={setFromText}
+              />
             </div>
           </div>
           <div className="flex justify-center items-center">
@@ -36,12 +44,17 @@ function App() {
           </div>
           <div>
           <SelectorLanguages
-            type="to"
+            type={LANG_DIRECTION.TO}
             value={toLanguage}
             onChange={setToLanguage}
           />
             <div>
-            {toLanguage}
+              <Textlanguage
+                type={LANG_DIRECTION.TO}
+                placeholder="Traducción"
+                loading={loading}
+                onChange={setResultText}
+              />
             </div>
           </div>
           

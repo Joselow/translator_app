@@ -64,11 +64,13 @@ export const setToLanguage = (state: InitialState, payload: Languages): InitialS
   }
 };
 
-export const setFromText = (state: InitialState, payload: string = ''): InitialState => ({
-  ...state,
-  loading: false,
-  fromText: payload,
-});
+export const setFromText = (state: InitialState, payload: string = ''): InitialState => {
+  return {
+    ...state,
+    loading: payload ? true: false,
+    fromText: payload,
+  }
+};
 
 export const setResultText = (state: InitialState, payload: string = ''): InitialState => ({
   ...state,
